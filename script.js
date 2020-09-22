@@ -7,7 +7,7 @@ function focusCommandPrompt() {
 }
 
 function init() {
-
+	textarea.value = "WebDOS ver. 0.1\nCopyleft 2020 kargol92\n";
 }
 
 function pressEnter(event) {
@@ -15,53 +15,109 @@ function pressEnter(event) {
         
         textarea.value += "\n" + path.value + prompt.value + "\n";
 
+        checkCommand();
 
-        if (prompt.value == "cls") {
-        	textarea.value = null;
-        	textarea.style.height = "0px";
-        }
-        else if (prompt.value == "exit") {
-        	window.close();
-        }
-        else if (prompt.value == "ver") {
-        	textarea.value += "WebDOS ver. 0.1\n";
-        }
-        else if (prompt.value == "date") {
-        	var date = new Date();
-        	textarea.value +=
-        		date.getMonth() + 1 + "/" + date.getDate() + "/" + date.getFullYear() + "\n";
-        }
-        else if (prompt.value == "time") {
-        	var date = new Date();
-        	textarea.value +=
-        		date.getHours() + ":" +
-        		date.getMinutes() + ":" +
-        		date.getSeconds() + "\n";
-        }
-        else if (prompt.value == "help") {
-        	var date = new Date();
-        	textarea.value +=
-        		"date	> get current date\n" +
-        		"exit	> quit this site\n" +
-        		"help	> show help\n" +
-        		"time	> get current time\n" +
-        		"ver	> display version of system\n";
-        }
-        else {
-        	textarea.value += "Illegal command: " + prompt.value + "\n";
-        }
-
-        textarea.style.height = textarea.scrollHeight + "px";
-        textarea.scrollTop = textarea.scrollHeight;
+        updateTextAreaHeight();
 
         prompt.value = "";
     }
 }
 
-function updateTextAreaHeight() {
+function checkCommand() {
+	var command = prompt.value.toLowerCase();
+	if (command == "cls") {
+    	textarea.value = null;
+    	textarea.style.height = "0px";
+    }
+    else if (command == "dir") {
+    	textarea.value +=
+    		"Directory of C:\\\n" +
+    		".		<DIR>		01/01/2020 12:00\n" +
+    		"..		<DIR>		01/01/2020 12:00\n" +
+    		"DOS		<DIR>		01/01/2020 12:00\n" +
+    		"AUTOEXEC BAT		  1,693	01/01/2020 12:00\n" +
+    		"COMMAND  COM		 66,245	01/01/2020 12:00\n" +
+    		"CONFIG   SYS		 46,485	01/01/2020 12:00\n" +
+    		"MSCONFIG SYS		    740	01/01/2020 12:00\n" +
+    		"	4 File(s)	116,063 Bytes.\n" +
+    		"	3 Dir(s)    262,111,744 Bytes.\n";
+    }
+    else if (command == "exit") {
+    	window.close();
+    }
+    else if (command == "ver") {
+    	textarea.value += "WebDOS ver. 0.1\n";
+    }
+    else if (command == "date") {
+    	var date = new Date();
+    	var month = addZeroBeforeTimedate(date.getMonth() + 1);
+    	var day = addZeroBeforeTimedate(date.getDate());
+    	var year = date.getFullYear();
 
+    	textarea.value += month + "/" + day + "/" + year + "\n";
+    }
+    else if (command == "time") {
+    	var date = new Date();
+    	var hour = addZeroBeforeTimedate(date.getHours());
+    	var minute = addZeroBeforeTimedate(date.getMinutes());
+    	var second = addZeroBeforeTimedate(date.getSeconds());
+
+    	textarea.value += hour + ":" + minute + ":" + second + "\n";
+    }
+    else if (command == "help") {
+    	var date = new Date();
+    	textarea.value +=
+    		"cls	> clear screen\n" +
+    		"date	> get current date\n" +
+    		"dir	> list the current directory\n" +
+    		"exit	> exit this command prompt\n" +
+    		"help	> show help\n" +
+    		"mode	> set the font size\n" +
+    		"time	> get current time\n" +
+    		"ver	> display version of system\n";
+    }
+    else if (command == "mode") {
+        textarea.value +=
+            "possible font sizes: 8, 16, 24, 32\n" +
+            "type e.g. 'mode 8' to set font size 8\n";
+    }
+    else if (command == "mode 8") {
+    	var fontSize = "8px";
+    	textarea.style.fontSize = fontSize;
+    	path.style.fontSize = fontSize;
+    	prompt.style.fontSize = fontSize;
+    }
+    else if (command == "mode 16") {
+    	var fontSize = "16px";
+    	textarea.style.fontSize = fontSize;
+    	path.style.fontSize = fontSize;
+    	prompt.style.fontSize = fontSize;
+    }
+    else if (command == "mode 24") {
+    	var fontSize = "24px";
+    	textarea.style.fontSize = fontSize;
+    	path.style.fontSize = fontSize;
+    	prompt.style.fontSize = fontSize;
+    }
+    else if (command == "mode 32") {
+    	var fontSize = "32px";
+    	textarea.style.fontSize = fontSize;
+    	path.style.fontSize = fontSize;
+    	prompt.style.fontSize = fontSize;
+    }
+    else {
+    	textarea.value += "Illegal command: " + command + "\n";
+    }
 }
 
-function callCommand(command) {
+function updateTextAreaHeight() {
+	textarea.style.height = textarea.scrollHeight + "px";
+    textarea.scrollTop = textarea.scrollHeight;
+}
 
+function addZeroBeforeTimedate(timedate)
+{
+	if (timedate < 10)
+    	return "0" + timedate;
+    return timedate;
 }

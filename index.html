@@ -10,7 +10,7 @@
 	<meta name="description" content="WebDOS - simple terminal in your browser (it's just a toy)"/>
 	<meta name="keywords" content=""/>
 </head>
-<body onclick="focusCommandPrompt()">
+<body onload="init();" onclick="focusCommandPrompt()">
 	<textarea readonly></textarea>
 	<input type="text" id="path" readonly value="C:\>"/><input type="text" id="prompt" autofocus onkeypress="pressEnter(event)"/>
 </body>
