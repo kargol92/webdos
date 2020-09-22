@@ -7,7 +7,10 @@ function focusCommandPrompt() {
 }
 
 function init() {
-	textarea.value = "WebDOS ver. 0.1\nCopyleft 2020 kargol92\n";
+	textarea.value =
+		"WebDOS ver. 0.1\n" +
+		"Copyleft 2020 kargol92\n" +
+		"More info at https://github.com/kargol92/webdos\n";
 }
 
 function pressEnter(event) {
