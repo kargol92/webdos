@@ -9,8 +9,7 @@ function focusCommandPrompt() {
 function init() {
 	textarea.value =
 		"WebDOS ver. 0.1\n" +
-		"Copyleft 2020 kargol92\n" +
-		"More info at https://github.com/kargol92/webdos\n";
+		"Copyleft 2020 kargol92\n";
 }
 
 function pressEnter(event) {
@@ -31,8 +30,7 @@ function checkCommand() {
 	if (command == "cls") {
     	textarea.value = null;
     	textarea.style.height = "0px";
-    }
-    else if (command == "dir") {
+    } else if (command == "dir") {
     	textarea.value +=
     		"Directory of C:\\\n" +
     		".		<DIR>		01/01/2020 12:00\n" +
@@ -44,30 +42,25 @@ function checkCommand() {
     		"MSCONFIG SYS		    740	01/01/2020 12:00\n" +
     		"	4 File(s)	116,063 Bytes.\n" +
     		"	3 Dir(s)    262,111,744 Bytes.\n";
-    }
-    else if (command == "exit") {
+    } else if (command == "exit") {
     	window.close();
-    }
-    else if (command == "ver") {
+    } else if (command == "ver") {
     	textarea.value += "WebDOS ver. 0.1\n";
-    }
-    else if (command == "date") {
+    } else if (command == "date") {
     	var date = new Date();
     	var month = addZeroBeforeTimedate(date.getMonth() + 1);
     	var day = addZeroBeforeTimedate(date.getDate());
     	var year = date.getFullYear();
 
     	textarea.value += month + "/" + day + "/" + year + "\n";
-    }
-    else if (command == "time") {
+    } else if (command == "time") {
     	var date = new Date();
     	var hour = addZeroBeforeTimedate(date.getHours());
     	var minute = addZeroBeforeTimedate(date.getMinutes());
     	var second = addZeroBeforeTimedate(date.getSeconds());
 
     	textarea.value += hour + ":" + minute + ":" + second + "\n";
-    }
-    else if (command == "help") {
+    } else if (command == "help") {
     	var date = new Date();
     	textarea.value +=
     		"cls	> clear screen\n" +
@@ -75,42 +68,40 @@ function checkCommand() {
     		"dir	> list the current directory\n" +
     		"exit	> exit this command prompt\n" +
     		"help	> show help\n" +
-    		"mode	> set the font size\n" +
+    		"mode	> set window size and font size\n" +
     		"time	> get current time\n" +
     		"ver	> display version of system\n";
-    }
-    else if (command == "mode") {
+    } else if (command == "mode") {
         textarea.value +=
-            "possible font sizes: 8, 16, 24, 32\n" +
-            "type e.g. 'mode 8' to set font size 8\n";
-    }
-    else if (command == "mode 8") {
+            "possible arguments: fullscreen, window, 8, 16, 24, 32\n" +
+            "type 'mode fullscreen' to set fullscreen mode\n" +
+            "type 'mode 8' to set font size 8\n";
+    } else if (command == "mode fullscreen") {
+        document.documentElement.requestFullscreen();
+    } else if (command == "mode window") {
+        document.exitFullscreen();
+    } else if (command == "mode 8") {
     	var fontSize = "8px";
     	textarea.style.fontSize = fontSize;
     	path.style.fontSize = fontSize;
     	prompt.style.fontSize = fontSize;
-    }
-    else if (command == "mode 16") {
+    } else if (command == "mode 16") {
     	var fontSize = "16px";
     	textarea.style.fontSize = fontSize;
     	path.style.fontSize = fontSize;
     	prompt.style.fontSize = fontSize;
-    }
-    else if (command == "mode 24") {
+    } else if (command == "mode 24") {
     	var fontSize = "24px";
     	textarea.style.fontSize = fontSize;
     	path.style.fontSize = fontSize;
     	prompt.style.fontSize = fontSize;
-    }
-    else if (command == "mode 32") {
+    } else if (command == "mode 32") {
     	var fontSize = "32px";
     	textarea.style.fontSize = fontSize;
     	path.style.fontSize = fontSize;
     	prompt.style.fontSize = fontSize;
-    }
-    else {
+    } else
     	textarea.value += "Illegal command: " + command + "\n";
-    }
 }
 
 function updateTextAreaHeight() {
