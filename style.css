@@ -1,7 +1,12 @@
+@font-face {
+	font-family: "Perfect DOS VGA 437";
+ 	src: url("Perfect DOS VGA 437.ttf");
+}
+
 * {
 	background-color: #000;
 	color: #fff;
-	font-family: monospace;
+	font-family: "Perfect DOS VGA 437", monospace;
 }
 
 body {
