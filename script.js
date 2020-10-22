@@ -8,8 +8,8 @@ function focusCommandPrompt() {
 
 function init() {
 	textarea.value =
-		"WebDOS ver. 0.1\n" +
-		"Copyleft 2020 kargol92 [https://github.com/kargol92/webdos]\n";
+		"WebDOS 0.1\thttps://github.com/kargol92/webdos\n" +
+		"Copyleft 2020 kargol92\n";
 }
 
 function pressEnter(event) {

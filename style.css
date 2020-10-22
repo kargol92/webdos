@@ -15,6 +15,11 @@ body {
 	overflow-y: hidden;
 }
 
+textarea:focus,
+input[type="text"]:focus {
+	outline: none;
+}
+
 textarea {
 	/*background-color: #00F;*/
 	display: block;
