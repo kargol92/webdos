@@ -43,10 +43,10 @@ input[type="text"] {
 	font-size: 16px;
 }
 
-input#path {
+input#command-prompt {
 	width: 4ch;
 }
 
-input#prompt {
+input#command-line {
 	width: calc(100% - 4ch);
 }

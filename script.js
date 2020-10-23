@@ -1,9 +1,9 @@
 var textarea = document.getElementsByTagName("textarea")[0];
-var path = document.getElementById("path");
-var prompt = document.getElementById("prompt");
+var commandPrompt = document.getElementById("command-prompt");
+var commandLine = document.getElementById("command-line");
 
-function focusCommandPrompt() {
-	prompt.focus();
+function focusCommandLine() {
+	commandLine.focus();
 }
 
 function init() {
@@ -15,18 +15,18 @@ function init() {
 function pressEnter(event) {
     if (event.which === 13 || event.keyCode === 13 || event.key === "Enter") {
         
-        textarea.value += "\n" + path.value + prompt.value + "\n";
+        textarea.value += "\n" + commandPrompt.value + commandLine.value + "\n";
 
         checkCommand();
 
         updateTextAreaHeight();
 
-        prompt.value = "";
+        commandLine.value = "";
     }
 }
 
 function checkCommand() {
-	var command = prompt.value.toLowerCase();
+	var command = commandLine.value.toLowerCase();
 	if (command == "cls") {
     	textarea.value = null;
     	textarea.style.height = "0px";
@@ -66,7 +66,7 @@ function checkCommand() {
     		"cls	> clear screen\n" +
     		"date	> get current date\n" +
     		"dir	> list the current directory\n" +
-    		"exit	> exit this command prompt\n" +
+    		"exit	> exit this command commandLine\n" +
     		"help	> show help\n" +
     		"mode	> set window size and font size\n" +
     		"time	> get current time\n" +
@@ -83,23 +83,23 @@ function checkCommand() {
     } else if (command == "mode 8") {
     	var fontSize = "8px";
     	textarea.style.fontSize = fontSize;
-    	path.style.fontSize = fontSize;
-    	prompt.style.fontSize = fontSize;
+    	commandPrompt.style.fontSize = fontSize;
+    	commandLine.style.fontSize = fontSize;
     } else if (command == "mode 16") {
     	var fontSize = "16px";
     	textarea.style.fontSize = fontSize;
-    	path.style.fontSize = fontSize;
-    	prompt.style.fontSize = fontSize;
+    	commandPrompt.style.fontSize = fontSize;
+    	commandLine.style.fontSize = fontSize;
     } else if (command == "mode 24") {
     	var fontSize = "24px";
     	textarea.style.fontSize = fontSize;
-    	path.style.fontSize = fontSize;
-    	prompt.style.fontSize = fontSize;
+    	commandPrompt.style.fontSize = fontSize;
+    	commandLine.style.fontSize = fontSize;
     } else if (command == "mode 32") {
     	var fontSize = "32px";
     	textarea.style.fontSize = fontSize;
-    	path.style.fontSize = fontSize;
-    	prompt.style.fontSize = fontSize;
+    	commandPrompt.style.fontSize = fontSize;
+    	commandLine.style.fontSize = fontSize;
     } else
     	textarea.value += "Illegal command: " + command + "\n";
 }
