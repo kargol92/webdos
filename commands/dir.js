@@ -1,5 +1,5 @@
 function dir() {
-	textarea.value +=
+	commandOutput.value +=
 		"Directory of C:\\\n" +
 		".		<DIR>		01/01/2020 12:00\n" +
 		"..		<DIR>		01/01/2020 12:00\n" +

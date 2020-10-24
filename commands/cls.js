@@ -1,4 +1,4 @@
 function cls() {
-	textarea.value = null;
-	textarea.style.height = "0px";
+	commandOutput.value = null;
+	commandOutput.style.height = "0px";
 }

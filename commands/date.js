@@ -4,5 +4,5 @@ function date() {
 	var day = addZeroBeforeTimedate(date.getDate());
 	var year = date.getFullYear();
 
-	textarea.value += month + "/" + day + "/" + year + "\n";
+	commandOutput.value += month + "/" + day + "/" + year + "\n";
 }

@@ -1,4 +1,4 @@
-var textarea = document.getElementsByTagName("textarea")[0];
+var commandOutput = document.getElementById("command-output");
 var commandPrompt = document.getElementById("command-prompt");
 var commandLine = document.getElementById("command-line");
 
@@ -7,7 +7,7 @@ function focusCommandLine() {
 }
 
 function init() {
-	textarea.value =
+	commandOutput.value =
 		"WebDOS 0.1 https://github.com/kargol92/webdos\n" +
 		"Copyleft 2020 kargol92\n";
 }
@@ -15,11 +15,11 @@ function init() {
 function pressEnter(event) {
     if (event.which === 13 || event.keyCode === 13 || event.key === "Enter") {
         
-        textarea.value += "\n" + commandPrompt.value + commandLine.value + "\n";
+        commandOutput.value += "\n" + commandPrompt.value + commandLine.value + "\n";
 
         checkCommand();
 
-        updateTextAreaHeight();
+        updateCommandOutputHeight();
 
         commandLine.value = "";
     }
@@ -43,13 +43,13 @@ function checkCommand() {
         case "mode 32": mode("32"); break;
         case "time": time(); break;
         case "ver": ver(); break;
-        default: textarea.value += "Illegal command: " + command + "\n";
+        default: commandOutput.value += "Illegal command: " + command + "\n";
     }
 }
 
-function updateTextAreaHeight() {
-	textarea.style.height = textarea.scrollHeight + "px";
-    textarea.scrollTop = textarea.scrollHeight;
+function updateCommandOutputHeight() {
+	commandOutput.style.height = commandOutput.scrollHeight + "px";
+    commandOutput.scrollTop = commandOutput.scrollHeight;
 }
 
 function addZeroBeforeTimedate(timedate)

@@ -1,5 +1,5 @@
 function help() {
-	textarea.value +=
+	commandOutput.value +=
 		"cls	> clear screen\n" +
 		"date	> get current date\n" +
 		"dir	> list the current directory\n" +
