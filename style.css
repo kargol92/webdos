@@ -13,6 +13,7 @@ body {
 	margin: 5px;
 	height: calc(100vh - 10px);
 	overflow-y: hidden;
+	/*-moz-tab-size: 4;*/
 }
 
 textarea:focus,
