@@ -1,4 +1,4 @@
 function cls(output) {
-	output.value = null;
+	output.innerHTML = null;
 	output.style.height = "0px";
 }

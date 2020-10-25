@@ -1,3 +1,3 @@
 function ver() {
-	return "WebDOS ver. 0.1\n";
+	return "WebDOS ver. 0.1\n\n";
 }

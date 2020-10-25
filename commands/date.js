@@ -4,5 +4,5 @@ function date() {
 	var day = addZeroBeforeTimedate(date.getDate());
 	var year = date.getFullYear();
 
-	return month + "/" + day + "/" + year + "\n";
+	return month + "/" + day + "/" + year + "\n\n";
 }

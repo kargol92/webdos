@@ -5,7 +5,7 @@
 
 * {
 	background-color: #000;
-	color: #fff;
+	color: #aaa;
 	font-family: "Perfect DOS VGA 437", monospace;
 	font-size: 24px;
 }
@@ -23,10 +23,7 @@ body {
 	outline: none;
 }
 
-textarea#command-output {
-	display: block;
-	resize: none;
-	overflow-y: hidden;
+pre#command-output {
 	margin: 0;
 	border: 0;
 	padding: 0;
@@ -34,6 +31,9 @@ textarea#command-output {
 	height: 87px;
 	min-height: 0;
 	max-height: calc(100% - 40px);
+	overflow-y: hidden;
+	white-space: pre-wrap; 
+    /*word-break: break-word;*/
 }
 
 input#command-prompt,
@@ -50,4 +50,17 @@ input#command-prompt {
 
 input#command-input {
 	width: calc(100% - 4ch);
+}
+
+em {
+	color: #fff;
+	font-style: normal;
+}
+
+.green {
+	color: #0a0;
+}
+
+.yellow {
+	color: #ff5;
 }
