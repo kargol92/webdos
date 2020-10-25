@@ -1,9 +1,9 @@
 var output = document.getElementById("command-output");
 var prompt = document.getElementById("command-prompt");
-var line = document.getElementById("command-line");
+var input = document.getElementById("command-input");
 
-function focusCommandLine() {
-	line.focus();
+function focusCommandInput() {
+	input.focus();
 }
 
 function init() {
@@ -14,15 +14,15 @@ function init() {
 
 function pressEnter(event) {
     if (event.which === 13 || event.keyCode === 13 || event.key === "Enter") {
-        output.value += "\n" + prompt.value + line.value + "\n";
+        output.value += "\n" + prompt.value + input.value + "\n";
         checkCommand();
-        updateCommandOutputHeight();
-        line.value = "";
+        updateOutputHeight();
+        input.value = "";
     }
 }
 
 function checkCommand() {
-	var command = line.value.toLowerCase().trim().replace(/\s*\//, " /");
+	var command = input.value.toLowerCase().trim().replace(/\s*\//, " /");
     //console.log(command);
 
     if (command == "cls")
@@ -32,7 +32,7 @@ function checkCommand() {
     else if (command == "mode")
         output.value += mode();
     else if (/mode \/.*/.test(command))
-        mode_(command.substr(6), output, prompt, line);
+        mode_(command.substr(6), output, prompt, input);
     else if (command == "date")
         output.value += date();
     else if (command == "dir")
@@ -47,7 +47,7 @@ function checkCommand() {
         output.value += "Illegal command: " + command + ".\n";
 }
 
-function updateCommandOutputHeight() {
+function updateOutputHeight() {
 	output.style.height = output.scrollHeight + "px";
     output.scrollTop = output.scrollHeight;
 }

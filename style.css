@@ -19,7 +19,7 @@ body {
 
 #command-output:focus,
 #command-prompt:focus,
-#command-line:focus {
+#command-input:focus {
 	outline: none;
 }
 
@@ -37,7 +37,7 @@ textarea#command-output {
 }
 
 input#command-prompt,
-input#command-line {
+input#command-input {
 	float: left;
 	border: 0;
 	margin: 0;
@@ -48,6 +48,6 @@ input#command-prompt {
 	width: 4ch;
 }
 
-input#command-line {
+input#command-input {
 	width: calc(100% - 4ch);
 }
