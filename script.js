@@ -16,8 +16,9 @@ function pressEnter(event) {
     if (event.which === 13 || event.keyCode === 13 || event.key === "Enter") {
         output.innerHTML += prompt.value + input.value + "\n";
         checkCommand();
+        output.innerHTML += "\n\n";
         updateOutputHeight();
-        input.value = "";
+        input.value = null;
     }
 }
 
@@ -43,7 +44,7 @@ function checkCommand() {
     else if (command == "ver")
         output.innerHTML += ver();
     else
-        output.innerHTML += "Illegal command: " + command + ".\n\n";
+        output.innerHTML += "Illegal command: " + command;
 }
 
 function updateOutputHeight() {

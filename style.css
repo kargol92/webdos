@@ -7,20 +7,20 @@
 	background-color: #000;
 	color: #aaa;
 	font-family: "Perfect DOS VGA 437", monospace;
-	font-size: 24px;
 }
 
 body {
 	margin: 5px;
 	height: calc(100vh - 10px);
 	overflow-y: hidden;
+	font-size: 24px;
 	/*-moz-tab-size: 4;*/
 }
 
-#command-output:focus,
-#command-prompt:focus,
-#command-input:focus {
-	outline: none;
+#command-output,
+#command-prompt,
+#command-input {
+	font-size: 24px;
 }
 
 pre#command-output {
@@ -42,6 +42,11 @@ input#command-input {
 	border: 0;
 	margin: 0;
 	padding: 0;
+}
+
+input#command-prompt:focus,
+input#command-input:focus {
+	outline: none;
 }
 
 input#command-prompt {

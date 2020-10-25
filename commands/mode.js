@@ -4,7 +4,7 @@ function mode() {
 	        "type <em>mode /w</em> to set window mode\n" +
 	        "type <em>mode /8</em> to set font size 8\n" +
 	        "type <em>mode /16</em> to set font size 16\n" +
-	        "type <em>mode /32</em> to set font size 32\n\n";
+	        "type <em>mode /32</em> to set font size 32";
 }
 
 function mode_(argument, output, prompt, input) {
@@ -13,10 +13,11 @@ function mode_(argument, output, prompt, input) {
 	else if (argument == "w")
 		document.exitFullscreen();
 	else if (argument >= 8 && argument <= 32) {
+		document.body.style.fontSize = argument + "px";
 	    output.style.fontSize = argument + "px";
 	    prompt.style.fontSize = argument + "px";
 	    input.style.fontSize = argument + "px";
 	}
 	else
-		output.innerHTML += "Illegal switch: /" + argument + ".\n\n";
+		output.innerHTML += "Illegal switch: /" + argument;
 }

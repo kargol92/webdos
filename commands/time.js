@@ -4,5 +4,5 @@ function time() {
 	var minute = addZeroBeforeTimedate(date.getMinutes());
 	var second = addZeroBeforeTimedate(date.getSeconds());
 
-	return hour + ":" + minute + ":" + second + "\n\n";
+	return hour + ":" + minute + ":" + second;
 }
