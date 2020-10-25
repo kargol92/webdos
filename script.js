@@ -22,26 +22,29 @@ function pressEnter(event) {
 }
 
 function checkCommand() {
-	var command = line.value.toLowerCase();
-    command = command.replace(/\s/g, '');
+	var command = line.value.toLowerCase().trim().replace(/\s*\//, " /");
+    //console.log(command);
 
-    switch(command) {
-        case "cls": cls(output); break;
-        case "exit": exit(); break;
-        case "mode": mode(output, prompt, line, ""); break;
-        case "mode/f": mode(output, prompt, line, "fullscreen"); break;
-        case "mode/w": mode(output, prompt, line, "window"); break;
-        case "mode/8":  mode(output, prompt, line, "8px"); break;
-        case "mode/16": mode(output, prompt, line, "16px"); break;
-        case "mode/24": mode(output, prompt, line, "24px"); break;
-        case "mode/32": mode(output, prompt, line, "32px"); break;
-        case "date": output.value += date(); break;
-        case "dir": output.value += dir(); break;
-        case "help": output.value += help(); break;
-        case "time": output.value += time(); break;
-        case "ver": output.value += ver(); break;
-        default: output.value += "Illegal command: " + command + "\n";
-    }
+    if (command == "cls")
+        cls(output);
+    else if (command == "exit")
+        exit();
+    else if (command == "mode")
+        output.value += mode();
+    else if (/mode \/.*/.test(command))
+        mode_(command.substr(6), output, prompt, line);
+    else if (command == "date")
+        output.value += date();
+    else if (command == "dir")
+        output.value += dir();
+    else if (command == "help")
+        output.value += help();
+    else if (command == "time")
+        output.value += time();
+    else if (command == "ver")
+        output.value += ver();
+    else
+        output.value += "Illegal command: " + command + ".\n";
 }
 
 function updateCommandOutputHeight() {

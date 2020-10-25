@@ -19,10 +19,11 @@
 	
 	<title>WebDOS</title>
 	<meta name="description" content="WebDOS - simple terminal in your browser (it's just a toy)"/>
-	<meta name="keywords" content="WebDOS, DOS, DOS Prompt, MS-DOS, MS-DOS Prompt, PC-DOS, IBM-DOS, 86-DOS, QDOS, terminal, console, shell, command prompt, command-line inteface, command-line interpreter, cli"/>
+	<meta name="keywords" content="WebDOS, DOS, MS-DOS, PC-DOS, 86-DOS, QDOS, DOS Prompt, MS-DOS Prompt, command-line inteface, command-line interpreter, cli, command prompt, terminal, console, shell"/>
 </head>
-<body onload="init();" onclick="focusCommandLine()">
+<body onload="init()" onclick="focusCommandLine()">
 	<textarea id="command-output" readonly></textarea>
-	<input type="text" id="command-prompt" readonly value="C:\>"/><input type="text" id="command-line" autofocus onkeypress="pressEnter(event)"/>
+	<input type="text" id="command-prompt" readonly value="C:\>"/>
+	<input type="text" id="command-line" autofocus onkeypress="pressEnter(event)"/>
 </body>
 </html>
