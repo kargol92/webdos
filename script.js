@@ -6,15 +6,9 @@ function focusCommandInput() {
 	input.focus();
 }
 
-function init() {
-	output.innerHTML =
-		"WebDOS 0.1 https://github.com/kargol92/webdos\n" +
-		"Copyleft 2020 kargol92\n\n";
-}
-
 function pressEnter(event) {
     if (event.which === 13 || event.keyCode === 13 || event.key === "Enter") {
-        output.innerHTML += prompt.value + input.value + "\n";
+        output.innerHTML += prompt.innerHTML + input.value + "\n";
         checkCommand();
         output.innerHTML += "\n\n";
         updateOutputHeight();
@@ -32,7 +26,7 @@ function checkCommand() {
     else if (command == "mode")
         output.innerHTML += mode();
     else if (/mode \/.*/.test(command))
-        mode_(command.substr(6), output, prompt, input);
+        mode_(command.substr(6), output, input);
     else if (command == "date")
         output.innerHTML += date();
     else if (command == "dir")

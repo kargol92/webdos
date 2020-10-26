@@ -7,15 +7,13 @@ function mode() {
 	        "type <em>mode /32</em> to set font size 32";
 }
 
-function mode_(argument, output, prompt, input) {
+function mode_(argument, output, input) {
 	if (argument == "f")
 		document.documentElement.requestFullscreen();
 	else if (argument == "w")
 		document.exitFullscreen();
 	else if (argument >= 8 && argument <= 32) {
 		document.body.style.fontSize = argument + "px";
-	    output.style.fontSize = argument + "px";
-	    prompt.style.fontSize = argument + "px";
 	    input.style.fontSize = argument + "px";
 	}
 	else

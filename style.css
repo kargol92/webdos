@@ -17,16 +17,10 @@ body {
 	/*-moz-tab-size: 4;*/
 }
 
-#command-output,
-#command-prompt,
-#command-input {
-	font-size: 24px;
-}
-
 pre#command-output {
 	margin: 0;
-	border: 0;
 	padding: 0;
+	border: 0;
 	width: 100%;
 	height: 87px;
 	min-height: 0;
@@ -36,25 +30,25 @@ pre#command-output {
     /*word-break: break-word;*/
 }
 
-input#command-prompt,
+div#command-prompt,
 input#command-input {
 	float: left;
-	border: 0;
 	margin: 0;
 	padding: 0;
+	border: 0;
 }
 
-input#command-prompt:focus,
-input#command-input:focus {
-	outline: none;
-}
-
-input#command-prompt {
+div#command-prompt {
 	width: 4ch;
 }
 
 input#command-input {
 	width: calc(100% - 4ch);
+	font-size: 24px;
+}
+
+input#command-input:focus {
+	outline: none;
 }
 
 em {
