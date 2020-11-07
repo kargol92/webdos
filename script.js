@@ -37,6 +37,8 @@ function checkCommand() {
         output.innerHTML += time();
     else if (command == "ver")
         output.innerHTML += ver();
+    else if (command == "website")
+        website();
     else
         output.innerHTML += "Illegal command: " + command;
 }
