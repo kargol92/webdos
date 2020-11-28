@@ -2,7 +2,7 @@ WebDOS
 ======
 WebDOS - simple terminal in your browser (it's just a toy)
 
-Projects site - [kargol92.github.io/webdos](https://kargol92.github.io/webdos)
+Projects site - [karol-kiersnowski.github.io/webdos](https://karol-kiersnowski.github.io/webdos)
 
 Technologies
 ------------
@@ -32,4 +32,4 @@ kargol92
 
 License
 -------
-[GNU General Public License v3.0](https://github.com/kargol92/cmd.sh/blob/master/LICENSE)
+[GNU General Public License v3.0](https://github.com/karol-kiersnowski/webdos/blob/master/LICENSE)
