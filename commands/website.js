@@ -1,3 +1,3 @@
 function website() {
-	window.open("https://github.com/kargol92/webdos");
+	window.open("https://github.com/karol-kiersnowski/webdos");
 }
