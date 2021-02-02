@@ -67,3 +67,19 @@ em {
 .yellow {
 	color: #ff5;
 }
+
+#win31 {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 0;
+	width: 100%;
+	height: 100%;
+}
+
+	#win31 iframe {
+		border: none;
+		width: 100%;
+		height: 100%;
+	}

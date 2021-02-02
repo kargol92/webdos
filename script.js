@@ -39,6 +39,8 @@ function checkCommand() {
         output.innerHTML += ver();
     else if (command == "website")
         website();
+    else if (command == "win" || command == "win.bat")
+        win();
     else
         output.innerHTML += "Illegal command: " + command;
 }

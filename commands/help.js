@@ -7,5 +7,6 @@ function help() {
 			"mode	> set window size and font size\n" +
 			"time	> get current time\n" +
 			"ver	> display version of system\n" +
-			"website	> open the project site";
+			"website	> open the project site\n" +
+			"win	> start Windows 3.1";
 }
