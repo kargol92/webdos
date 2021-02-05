@@ -13,7 +13,7 @@ body {
 	margin: 5px;
 	height: calc(100vh - 10px);
 	overflow-y: hidden;
-	font-size: 24px;
+	font-size: 16px;
 	/*-moz-tab-size: 4;*/
 }
 
@@ -22,7 +22,7 @@ pre#command-output {
 	padding: 0;
 	border: 0;
 	width: 100%;
-	height: 87px;
+	height: 57px;
 	min-height: 0;
 	max-height: calc(100% - 40px);
 	overflow-y: hidden;
@@ -44,7 +44,7 @@ div#command-prompt {
 
 input#command-input {
 	width: calc(100% - 4ch);
-	font-size: 24px;
+	font-size: 16px;
 }
 
 input#command-input:focus {
