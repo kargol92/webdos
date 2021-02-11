@@ -7,52 +7,44 @@ function focusCommandInput() {
 }
 
 function pressEnter(event) {
-    if (event.which === 13 || event.keyCode === 13 || event.key === "Enter") {
-        output.innerHTML += prompt.innerHTML + input.value + "\n";
-        checkCommand();
-        output.innerHTML += "\n\n";
-        updateOutputHeight();
-        input.value = null;
-    }
+	if (event.which === 13 || event.keyCode === 13 || event.key === "Enter") {
+		output.innerHTML += prompt.innerHTML + input.value + "\n";
+		checkCommand();
+		output.innerHTML += "\n\n";
+		updateOutputHeight();
+		input.value = null;
+	}
 }
 
 function checkCommand() {
-	var command = input.value.toLowerCase().trim().replace(/\s*\//, " /");
+	var command = input.value.toUpperCase().trim().replace(/\s*\//, " /");
+	console.log(command);
 
-    if (command == "cls")
-        cls(output);
-    else if (command == "exit")
-        exit();
-    else if (command == "mode")
-        output.innerHTML += mode();
-    else if (/mode \/.*/.test(command))
-        mode_(command.substr(6), output, input);
-    else if (command == "date")
-        output.innerHTML += date();
-    else if (command == "dir")
-        output.innerHTML += dir();
-    else if (command == "help")
-        output.innerHTML += help();
-    else if (command == "time")
-        output.innerHTML += time();
-    else if (command == "ver")
-        output.innerHTML += ver();
-    else if (command == "website")
-        website();
-    else if (command == "win" || command == "win.bat")
-        win();
-    else
-        output.innerHTML += "Illegal command: " + command;
+	if (command == "CLS")				cls(output);
+	else if (command == "EXIT")			exit();
+	else if (command == "MODE")			output.innerHTML += mode();
+	else if (/MODE \/.*/.test(command))	mode_(command.substr(6), output, input);
+	else if (command == "DATE")			output.innerHTML += date();
+	else if (command == "DIR")			output.innerHTML += dir();
+	else if (command == "HELP")			output.innerHTML += help();
+	else if (command == "TIME")			output.innerHTML += time();
+	else if (command == "TYPE")			output.innerHTML += type();
+	else if (/TYPE \.*/.test(command))	output.innerHTML += type_(command.substr(5));
+	else if (command == "VER")			output.innerHTML += ver();
+	else if (command == "WEBSITE")		website();
+	else if (command == "WIN")			win();
+	else if (command == "WIN.BAT")		win();
+	else	output.innerHTML += "Illegal command: <em>" + command + "</em>";
 }
 
 function updateOutputHeight() {
 	output.style.height = output.scrollHeight + "px";
-    output.scrollTop = output.scrollHeight;
+	output.scrollTop = output.scrollHeight;
 }
 
 function addZeroBeforeTimedate(timedate)
 {
 	if (timedate < 10)
-    	return "0" + timedate;
-    return timedate;
+		return "0" + timedate;
+	return timedate;
 }

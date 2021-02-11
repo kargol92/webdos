@@ -1,12 +1,11 @@
 function help() {
-	return	"cls	> clear screen\n" +
-			"date	> get current date\n" +
-			"dir	> list the current directory\n" +
-			"exit	> exit this command commandLine\n" +
-			"help	> show help\n" +
-			"mode	> set window size and font size\n" +
-			"time	> get current time\n" +
-			"ver	> display version of system\n" +
-			"website	> open the project site\n" +
-			"win	> start Windows 3.1";
+	return	"CLS	> clear the screen\n" +
+			"DATE	> get current date\n" +
+			"DIR	> list the current directory\n" +
+			"EXIT	> exit this command-line shell\n" +
+			"HELP	> show help\n" +
+			"MODE	> set window size and font size\n" +
+			"TIME	> get current time\n" +
+			"TYPE	> display content of a text file\n" +
+			"VER	> display version of system";
 }
